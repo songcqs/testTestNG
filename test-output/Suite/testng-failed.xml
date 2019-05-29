@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Failed suite [Suite]" parallel="classes">
+  <listeners>
+    <listener class-name="com.test.lib.RetryListener"/>
+  </listeners>
+  <test name="Test(failed)" parallel="classes">
+    <classes>
+      <class name="com.test.ng.CreateAndSendMail">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.test.ng.CreateAndSendMail -->
+      <class name="com.test.ng.TestLoginFail">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.test.ng.TestLoginFail -->
+      <class name="com.test.ng.DeleteMail">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="deleteMail"/>
+        </methods>
+      </class> <!-- com.test.ng.DeleteMail -->
+      <class name="com.test.ng.LoginTestNG">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.test.ng.LoginTestNG -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
